@@ -1,0 +1,29 @@
+.nameCrypto{
+    background-color: rgba(57, 57, 57, 0.712);
+    display: flex;
+    justify-content: space-between;
+    border-radius: 6px;
+    margin: 0.5rem;
+    label{
+        margin: 0.5rem;
+    }
+    input{
+        width: 20%;
+        margin: 0.5rem;
+        text-align: end;
+        color: white;
+    }
+}
+.containerCheckout{
+    width: 400px;
+}
+.username{
+    display: flex;
+    justify-content: center;
+}
+.containerButton{
+    width: 100%;
+    button{
+        width: 100%;
+    }
+}

@@ -1,0 +1,45 @@
+.containerCryptos{
+    background-image: url("../../../../../assets/images/Las-criptomonedas.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+.header{
+    height: 10%;
+    width: 100%;
+    background-color: #ec0000a5;
+    display: flex;
+    .contenedorLogo{
+        width: 150px;
+        margin: 0.5rem;
+        .logo{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .nombreUser{
+        width: 100%;
+        display: flex;
+        justify-content:end;
+        align-items: center;
+        p{
+            font-size: 25px;
+            color: white;margin-right: 1rem;
+        }
+    } 
+}
+.dashboard{
+    display: flex;
+    height: 100%;
+    .tablaCrypto{
+        width: 70%;
+    }
+    .infoUser{
+        width: 30%;
+    }
+}   

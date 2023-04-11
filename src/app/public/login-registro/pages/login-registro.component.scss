@@ -1,0 +1,124 @@
+.contenedorPage{
+    background-image: url("../../../../assets/images/Las-criptomonedas.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .containerLoginRegistro{
+        display: flex;
+        width: 50%;
+        height: 60%;
+        justify-content: space-between;
+        box-shadow: 2px 1px 13px 4px rgba(0,0,0,0.75);
+        @media (max-width:1650px){
+            width: 60%;
+        }
+        @media (max-width:1450px){
+            width: 80%;
+        }
+        @media (max-width:900px){
+            width: 95%;
+        }
+        @media (max-width:600px){
+            width: 90%;
+        }
+        .containerLogin{
+            width: 50%;
+            height: 100%;
+            background-color: whitesmoke;
+            @media (max-width:600px){
+                width: 100%;
+            }
+            .formLogin{
+                margin: 4rem;
+                align-items: center;
+                height:-webkit-fill-available;
+            }
+        }
+    }
+    .containerImage{
+        background-image: url("../../../../assets/images/trading-de-criptomonedas.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @media (max-width:600px){
+            display: none;
+        }
+        .infoLogin{
+            color: white;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            backdrop-filter: blur(5px);
+            width: 100%;
+            .containerDesc{
+                p{
+                    font-size: 18px;
+                    font-family: 'georgia';
+                    margin: 1rem;
+                    letter-spacing: 3px;
+                    line-height: 1;
+                    @media (max-width: 1000px){
+                        font-size: 16px;
+                    }
+                }
+                .buttonsRedes{
+                    display: flex;
+                    width: 100%;
+                    justify-content: center;
+                    .facebook{
+                        height: 50px;
+                        width: 150px;
+                        border-radius: 30px;
+                        border: none;
+                        background-color: #3b5998;
+                        color: white;
+                        margin: 1rem;
+                        box-shadow: 1px 1px 14px 0px rgba(0,0,0,0.75);
+                    }
+                    .twitter{
+                        background-color: #1DA1F2;
+                        height: 50px;
+                        width: 150px;
+                        border-radius: 30px;
+                        color: white;
+                        border: none;
+                        margin: 1rem;
+                        box-shadow: 1px 1px 14px 0px rgba(0,0,0,0.75);
+                    }
+                }  
+            }
+            h1{
+                font-size: 50px;
+                font-family: 'georgia';
+                margin: 1rem;
+                font-style: bold;
+                letter-spacing: 3px;
+                line-height: 1;
+                margin-top: 5rem;
+                @media (max-width: 1000px){
+                    font-size: 35px;
+                }
+            }
+        }
+    }
+    @media (max-width: 1400px){
+        .infoLogin{
+            h1{
+                font-size: 25px;
+            }
+        .containerLoginRegistro{
+            width: 80%;
+        }    
+        }
+    }
+}

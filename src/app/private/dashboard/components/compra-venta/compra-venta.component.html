@@ -1,0 +1,36 @@
+<div class="containerCheckout">
+    <div class="username">
+        <h1>{{usuario.username}}</h1>
+    </div>
+    <div class="nameCrypto">
+        <label for="name">{{(data.crypto_name).toUpperCase()}}</label>
+        <label for="asset">{{data.asset}}</label>
+    </div>
+    <div class="nameCrypto">
+        <label for="price">Precio:</label>
+        <label for="value">{{data.value}}$</label>
+    </div>
+    <div class="nameCrypto">
+        <label for="stock">Stock:</label>
+        <label for="value">{{data.stock}}</label>
+    </div>
+    <div class="nameCrypto">
+        <label for="balance">Tu Saldo:</label>
+        <label for="value">{{usuario.deposit}}$</label>
+    </div>
+    <div class="nameCrypto">
+        <label for="buy/sell">Comprar/Vender:</label>
+        <input matInput placeholder="0" [(ngModel)]="inputValue" onFocus="if (this.value==0) this.value='';">
+    </div>
+    <div class="nameCrypto">
+        <label for="tusmonedas">Tus Monedas:</label>
+        <label for="value">0</label>
+    </div>
+    <div class="nameCrypto">
+        <label for="total">Total a pagas:</label>
+        <label for="value">{{inputValue*data.value}}</label>
+    </div>
+    <div class="containerButton">
+        <button mat-raised-button color="warn">Comprar</button>
+    </div>
+</div>

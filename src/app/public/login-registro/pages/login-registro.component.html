@@ -1,0 +1,27 @@
+<div class="contenedorPage">
+    <div class="containerLoginRegistro">
+        <div class="containerImage">
+            <div class="infoLogin">
+                <h1>Bienvenido a CryptoFortress</h1>
+                <div class="containerDesc">
+                    <p>Bienvenido a CryptoFortress, la plataforma de compra y venta de criptomonedas más segura y fácil de usar del mercado. 
+                        Con nosotros, puedes comprar y vender criptomonedas de forma rápida y confiable. 
+                        Nuestro enfoque principal es la seguridad y estamos aquí para ayudarte en cada paso del camino. 
+                        ¡Únete hoy y comienza a proteger tu futuro financiero!</p>
+                        <div class="buttonsRedes">
+                            <button class="facebook">Facebook</button>
+                            <button class="twitter">Twitter</button>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div class="containerLogin">
+            <div class="formLogin" *ngIf="irRegistro==false">
+                <app-login></app-login>
+            </div>
+            <div class="formLogin" *ngIf="irRegistro==true">
+                <app-registro></app-registro>
+            </div>
+        </div>
+    </div>
+</div>

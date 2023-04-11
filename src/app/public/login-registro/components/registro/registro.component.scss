@@ -1,0 +1,57 @@
+.registroContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(245, 245, 245);
+    margin-top: 40px;
+    .titulo{
+        width: 100%;
+        text-align: start;
+        margin: 1rem 0;
+    }
+    h1{
+        color: black;
+        font-size: 40px;
+        font-family: 'Suwannaphum', serif;
+        font-weight: bold;
+    }
+    .buttonRegistro{
+        width: 100%;
+        min-width: 150px;
+        max-width: 500px;
+        height: 40px;
+        border-radius: 5px;
+        background-color: rgba(255, 0, 0, 0.712);
+        color: white;
+        font-family: 'Suwannaphum', serif;
+        font-size: 20px;   
+        cursor: pointer;
+    }
+    .registroForm{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        margin: 1rem;
+        min-width: 150px;
+        max-width: 500px;
+        input{
+            width: 100%;
+            height: 30px;
+            background: none;
+            border: none;
+            border-bottom: 2.5px solid rgb(19, 69, 155);
+            margin: 1rem 0;
+        }
+        input:focus{
+            outline: none;
+            transition: 0.3s;
+            border-bottom: 2.5px solid rgb(133, 180, 255);
+        }
+        input:focus::placeholder {
+            color: transparent;
+            transition: 0.3s;
+        }
+    }
+}

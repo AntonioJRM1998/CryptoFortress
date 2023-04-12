@@ -19,7 +19,7 @@ export class CompraVentaComponent implements OnInit {
   type:string=''
   newBalance:number=0
   cerrarModal=false
-  
+
   constructor(private userservice:UserService, 
     @Inject(MAT_DIALOG_DATA) public data: 
     cryptoMonedas,
@@ -59,7 +59,7 @@ export class CompraVentaComponent implements OnInit {
     }
   }
   venderMonedas(coin:cryptoMonedas){
-    if(this.inputValue>0 && this.inputValue<=this.tusMonedas){
+    if(parseFloat(this.inputValue.toString())>0 && parseFloat(this.inputValue.toString())<=parseFloat(this.tusMonedas.toString())){
       let coinUser:cryptoUserCoins
       let amoutTotal:number=parseFloat(this.tusMonedas.toString()) - parseFloat(this.inputValue.toString())
       let totalStock:number=parseFloat(this.data.stock.toString()) + parseFloat(this.inputValue.toString())

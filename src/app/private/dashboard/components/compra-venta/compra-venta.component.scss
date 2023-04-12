@@ -15,6 +15,7 @@
     }
 }
 .containerCheckout{
+    position: relative;
     width: 400px;
 }
 .username{
@@ -27,3 +28,8 @@
         width: 100%;
     }
 }
+.spinner{
+    position: absolute;
+    top: 38%;
+    right: 38%;
+ }

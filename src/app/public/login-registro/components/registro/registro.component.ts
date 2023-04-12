@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { UserService } from 'src/app/public/services/user.service';
+import { user } from '../../models/user.interface';
 
 @Component({
   selector: 'app-registro',
@@ -7,12 +10,62 @@ import { Router } from '@angular/router';
   styleUrls: ['./registro.component.scss']
 })
 export class RegistroComponent implements OnInit {
-
-  constructor(private router:Router) { }
+  emailFormControl = this.validacionesLogin()
+  constructor(private router:Router,private _formBuilder: FormBuilder,private userService:UserService) { 
+    
+  }
 
   ngOnInit(): void {
   }
   registrarse(){
-    this.router.navigate(['/'])
+    if(this.emailFormControl.valid){
+      console.log(parseFloat(this.emailFormControl.get('deposit')?.value))
+      let user:user= {
+        user_id:'',
+        username:this.emailFormControl.get('username')?.value,
+        email:this.emailFormControl.get('email')?.value,
+        password:this.emailFormControl.get('password')?.value,
+        deposit:this.emailFormControl.get('deposit')?.value,
+        birthdate:''
+      }
+      this.userService.addNewUser(user).subscribe(_result=>{
+        window.location.reload()
+      })
+    }
+  }
+  validacionesLogin() {
+    return this._formBuilder.group({
+      username: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(3)
+        ],
+      ],
+      email: [
+        '',
+        [
+          Validators.required,
+          Validators.pattern(/^[\w.%+-]+@[\w.-]+\.[a-zA-Z]{2,}$/),
+        ],
+      ],
+      password: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(8),
+          Validators.maxLength(14),
+        ],
+        
+      ],
+      deposit: [
+        '',
+        [
+          Validators.required,
+          Validators.pattern (/^[1-9][0-9]*$/)
+        ],
+        
+      ],
+    });
   }
 }

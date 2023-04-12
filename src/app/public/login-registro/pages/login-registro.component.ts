@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-login-registro',
@@ -8,11 +8,7 @@ import { FormControl, Validators } from '@angular/forms';
 })
 export class LoginRegistroComponent implements OnInit {
   irRegistro:boolean=false
-  emailFormControl = new FormControl('', [
-    Validators.required,
-    Validators.email,
-  ]);
-  constructor() { }
+  constructor(private userservices:UserService) { }
 
   ngOnInit(): void {
   }

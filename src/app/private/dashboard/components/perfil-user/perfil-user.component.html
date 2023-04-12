@@ -1,37 +1,9 @@
 <div class="contenedorUser">
     <div class="imageUser">
-        <img src="../../../../../assets/images/userimage.png" alt="">
+        <img src="../../../../../assets/images/perfil.jpg" alt="">
     </div>
     <div class="inforUser">
         <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
-            <mat-tab label="Datos del Usuario">
-                <div class="usernameEmail">
-                    <mat-form-field class="example-full-width">
-                        <mat-label>Username</mat-label>
-                        <input matInput placeholder="Ex. Pizza" value={{usuario.username}}>
-                    </mat-form-field>
-                    <mat-form-field class="example-full-width">
-                        <mat-label>Email</mat-label>
-                        <input matInput placeholder="ejemplo@gmail.com" value={{usuario.email}}>
-                    </mat-form-field>
-                </div>
-                <div class="containerAmmoutPassword">
-                    <mat-form-field class="example-full-width">
-                        <mat-label>Password</mat-label>
-                        <input matInput value="" [type]="hide ? 'password' : 'text'">
-                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                        </button>
-                    </mat-form-field>
-                    <mat-form-field class="example-full-width">
-                        <mat-label>Balance</mat-label>
-                        <input matInput placeholder="ejemplo@gmail.com" value={{usuario.deposit}}>
-                    </mat-form-field>
-                </div>
-                <div class="containerButton">
-                    <button class="buttonLogin">Actualizar Perfil</button>
-                </div>
-            </mat-tab>
             <mat-tab label="Tus Monedas">Content 2</mat-tab>
             <mat-tab label="Historial de Compras">Content 3</mat-tab>
           </mat-tab-group>

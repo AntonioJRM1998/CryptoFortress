@@ -8,7 +8,7 @@
     </div>
     <div class="nameCrypto">
         <label for="price">Precio:</label>
-        <label for="value">{{data.value}}$</label>
+        <label for="value">{{data.value}} $</label>
     </div>
     <div class="nameCrypto">
         <label for="stock">Stock:</label>
@@ -16,7 +16,7 @@
     </div>
     <div class="nameCrypto">
         <label for="balance">Tu Saldo:</label>
-        <label for="value">{{usuario.deposit}}$</label>
+        <label for="value">{{usuario.deposit}} $</label>
     </div>
     <div class="nameCrypto">
         <label for="buy/sell">Comprar/Vender:</label>
@@ -24,13 +24,14 @@
     </div>
     <div class="nameCrypto">
         <label for="tusmonedas">Tus Monedas:</label>
-        <label for="value">0</label>
+        <label for="value">{{tusMonedas}}</label>
     </div>
     <div class="nameCrypto">
-        <label for="total">Total a pagas:</label>
-        <label for="value">{{inputValue*data.value}}</label>
+        <label for="total">Total:</label>
+        <label for="value">{{inputValue*data.value}} $</label>
     </div>
     <div class="containerButton">
-        <button mat-raised-button color="warn">Comprar</button>
+        <button mat-raised-button color="warn" [mat-dialog-close]="cerrarModal" [disabled]="inputValue == 0" *ngIf="type == 'buy'" (click)="comprarMonedas(data)">Comprar</button>
+        <button mat-raised-button color="accent" [mat-dialog-close]="cerrarModal"[disabled]="inputValue == 0" *ngIf="type == 'sell'" (click)="venderMonedas(data)">Vender</button>
     </div>
 </div>

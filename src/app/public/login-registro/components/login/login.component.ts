@@ -14,9 +14,16 @@ import { UserService } from 'src/app/public/services/user.service';
 })
 export class LoginComponent implements OnInit {
   emailFormControl = this.validacionesLogin()
+  logeando:boolean=false
   constructor(private loginregistro:LoginRegistroComponent,private router:Router,private _formBuilder: FormBuilder,private _snackbar: MatSnackBar,private userservice:UserService) { }
 
   ngOnInit(): void {
+    if(sessionStorage.getItem('token')){
+      sessionStorage.removeItem('token')
+    }
+    if(sessionStorage.getItem('trade')){
+      sessionStorage.removeItem('trade')
+    }
   }
   goToRegistro(){
       this.loginregistro.setRegistro(true)
@@ -25,10 +32,14 @@ export class LoginComponent implements OnInit {
     if(this.emailFormControl.valid){
       this.userservice.getUsuariosBBDD(email,password).subscribe(user =>{
         if(!!user){
+          this.logeando=true
           sessionStorage.setItem('token',user.user_id)
-          this.router.navigate(['/private/dashboard'])
+          setTimeout(() => {
+              this.logeando = false;
+              this.router.navigate(['/private/dashboard'])
+            }, 3000);
         }else{
-
+          this.openSnackBar('Email o contraseña incorrectas')
         }
       })
     }else{

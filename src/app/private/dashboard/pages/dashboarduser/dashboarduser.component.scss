@@ -25,7 +25,7 @@
     .nombreUser{
         width: 100%;
         display: flex;
-        justify-content:end;
+        justify-content:start;
         align-items: center;
         p{
             font-size: 25px;
@@ -42,4 +42,14 @@
     .infoUser{
         width: 30%;
     }
-}   
+}
+.balance{
+    width: 45%;
+    display: flex;
+    justify-content:end;
+    align-items: center;
+    p{
+        font-size: 25px;
+        color: white;margin-right: 1rem;
+    }
+}    

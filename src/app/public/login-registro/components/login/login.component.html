@@ -1,26 +1,32 @@
 <div class="loginContainer">
-   <div class="titulo">
-      <h1>Login</h1>
+   <div class="containerLogin" *ngIf="logeando == false">
+      <div class="titulo">
+         <h1>Login</h1>
+      </div>
+       <form class="loginForm" [formGroup]="emailFormControl">
+          <input
+            [ngClass]="emailFormControl.controls['email'].invalid && (emailFormControl.controls['email'].dirty || emailFormControl.controls['email'].touched)  ? 'inputError' : 'input'" 
+            type="email" 
+            class="emailInput" 
+            formControlName="email" 
+            placeholder="Introduce tu email"
+            #email>
+          <input 
+          [ngClass]="emailFormControl.controls['password'].invalid && (emailFormControl.controls['password'].dirty || emailFormControl.controls['password'].touched)  ? 'inputError' : 'input'"
+          type="password" 
+          class="passwordInput" 
+          formControlName="password" 
+          placeholder="Introduce tu contraseña"
+          #password
+          >
+          <button class="buttonLogin" (click)="login(email.value,password.value)">Iniciar Sesion</button>
+       </form>
+       <div class="iraRegistro">
+         <p>¿No tienes cuenta?  <a (click)="goToRegistro()">¡Registrate Ahora!</a></p>
+       </div>
    </div>
-    <form class="loginForm" [formGroup]="emailFormControl">
-       <input
-         [ngClass]="emailFormControl.controls['email'].invalid && (emailFormControl.controls['email'].dirty || emailFormControl.controls['email'].touched)  ? 'inputError' : 'input'" 
-         type="email" 
-         class="emailInput" 
-         formControlName="email" 
-         placeholder="Introduce tu email"
-         #email>
-       <input 
-       [ngClass]="emailFormControl.controls['password'].invalid && (emailFormControl.controls['password'].dirty || emailFormControl.controls['password'].touched)  ? 'inputError' : 'input'"
-       type="password" 
-       class="passwordInput" 
-       formControlName="password" 
-       placeholder="Introduce tu contraseña"
-       #password
-       >
-       <button class="buttonLogin" (click)="login(email.value,password.value)">Iniciar Sesion</button>
-    </form>
-    <div class="iraRegistro">
-      <p>¿No tienes cuenta?  <a (click)="goToRegistro()">¡Registrate Ahora!</a></p>
+    <div class="spinnerContainer" *ngIf="logeando==true">
+      <mat-spinner></mat-spinner>
+      <label for="sesion">Iniciando Sesion...</label>
     </div>
 </div>

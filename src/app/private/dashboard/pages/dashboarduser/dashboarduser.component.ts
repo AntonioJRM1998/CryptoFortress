@@ -11,11 +11,6 @@ import { UserService } from 'src/app/public/services/user.service';
 export class DashboarduserComponent implements OnInit {
   usuario!:user
   constructor(private userservice:UserService,private router:Router) { 
-    const token=sessionStorage.getItem('token') || ''
-      this.userservice.getUserById(token).subscribe(user =>{
-        this.usuario=user
-        this.userservice.setUsuario(this.usuario)
-    })
   }
 
   ngOnInit(): void {
@@ -24,6 +19,13 @@ export class DashboarduserComponent implements OnInit {
     }else{
       this.router.navigate(['/'])
     }
+    const token=sessionStorage.getItem('token') || ''
+      this.userservice.getUserById(token).subscribe(user =>{
+        this.usuario=user
+        this.userservice.setUsuario(this.usuario)
+    })
+    this.userservice.balance.subscribe(result=>{
+      this.usuario.deposit=result
+    })
   }
-
 }

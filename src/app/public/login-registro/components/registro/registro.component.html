@@ -2,10 +2,38 @@
     <div class="titulo">
        <h1>Registro</h1>
     </div>
-     <form class="registroForm">
-        <input type="text" class="emailInput" formControlName="email" placeholder="Introduce tu nombre de usuario">
-        <input type="email" class="emailInput" formControlName="email" placeholder="Introduce tu email">
-        <input type="password" class="passwordInput" formControlName="password" placeholder="Introduce tu contraseña">
-        <button class="buttonRegistro">Registrarse</button>
+     <form class="registroForm" [formGroup]="emailFormControl">
+        <input
+        [ngClass]="emailFormControl.controls['username'].invalid && (emailFormControl.controls['username'].dirty || emailFormControl.controls['username'].touched)  ? 'inputError' : 'input'" 
+        type="text"
+        name="username" 
+        class="emailInput" 
+        formControlName="username" 
+        placeholder="Introduce tu nombre de usuario">
+
+        <input 
+        [ngClass]="emailFormControl.controls['email'].invalid && (emailFormControl.controls['email'].dirty || emailFormControl.controls['email'].touched)  ? 'inputError' : 'input'"
+        type="email" 
+        class="emailInput" 
+        formControlName="email" 
+        placeholder="Introduce tu email">
+
+        <input 
+        [ngClass]="emailFormControl.controls['password'].invalid && (emailFormControl.controls['password'].dirty || emailFormControl.controls['password'].touched)  ? 'inputError' : 'input'"
+        type="password"
+        name="password"
+        class="passwordInput" 
+        formControlName="password" 
+        placeholder="Introduce tu contraseña">
+
+        <input 
+        [ngClass]="emailFormControl.controls['deposit'].invalid && (emailFormControl.controls['deposit'].dirty || emailFormControl.controls['deposit'].touched)  ? 'inputError' : 'input'"
+        type="text" 
+        name="deposit"
+        class="passwordInput" 
+        formControlName="deposit" 
+        placeholder="Introduce tus fondos">
+
+        <button class="buttonRegistro" (click)="registrarse()">Registrarse</button>
      </form>
  </div>

@@ -14,7 +14,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
 import { CompraVentaComponent } from './components/compra-venta/compra-venta.component';
 import {FormsModule} from '@angular/forms';
-
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 @NgModule({
   declarations: [
     DashboarduserComponent,
@@ -33,7 +33,8 @@ import {FormsModule} from '@angular/forms';
     MatTabsModule,
     MatIconModule,
     MatDialogModule,
-    FormsModule
+    FormsModule,
+    MatProgressSpinnerModule
   ]
 })
 export class DashboardModule { }

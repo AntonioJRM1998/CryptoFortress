@@ -1,0 +1,183 @@
+{
+	"info": {
+		"_postman_id": "a6f3e641-5cd4-4953-b4c0-cd77fba3733b",
+		"name": "Collentions Request CryptoFortress",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login/Registro",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"antonio@gmail.com\",\r\n    \"password\":\"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9000/user/getUser",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"user",
+								"getUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registro",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\":\"c25a2e51-81e8-410a-81f9-5f7f9078f581\", // Clave primaria, no repetir\r\n    \"username\":\"Antonio\",\r\n    \"email\":\"antonio12@gmail.com\",// Este campo es unico\r\n    \"password\":\"12345678\",\r\n    \"birthdate\":\"2022-02-02\",\r\n    \"deposit\":50000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9000/user/addUser",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"user",
+								"addUser"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Get y Update Monedas",
+			"item": [
+				{
+					"name": "Obtener Monedas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9000/crypto/getCoins",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"crypto",
+								"getCoins"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Moneda",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"crypto_id\":1,\r\n    \"stock\":10000 // Este numero es el que se usa para actualizar el stock\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9000/crypto/update",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"crypto",
+								"update"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Get y Update de monedas Usuario",
+			"item": [
+				{
+					"name": "Obtener Monedas por Ids",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"crypto_id\":1,\r\n    \"user_id\":\"77c3f2f3-c693-48c4-9609-16770e4a490d\" //ID de un usuario existente\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9000/crypto-user/getCoinsByIds",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"crypto-user",
+								"getCoinsByIds"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update de moneda del usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"crypto_id\":1,\r\n    \"user_id\":\"77c3f2f3-c693-48c4-9609-16770e4a490d\",\r\n    \"amount\":10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9000/crypto-user/update",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"crypto-user",
+								"update"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

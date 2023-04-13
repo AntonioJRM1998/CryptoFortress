@@ -28,4 +28,9 @@ export class DashboarduserComponent implements OnInit {
       this.usuario.deposit=result
     })
   }
+  closeSesion(){
+    sessionStorage.removeItem('token')
+    sessionStorage.removeItem('trade');
+    this.router.navigate(['/'])
+  }
 }

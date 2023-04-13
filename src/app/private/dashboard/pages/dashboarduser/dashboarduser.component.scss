@@ -29,7 +29,8 @@
         align-items: center;
         p{
             font-size: 25px;
-            color: white;margin-right: 1rem;
+            color: white;
+            margin: 1rem;
         }
     } 
 }
@@ -50,6 +51,16 @@
     align-items: center;
     p{
         font-size: 25px;
-        color: white;margin-right: 1rem;
+        color: white;
+        margin:0
+    }
+}
+.buttonContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    button{
+        height: 50%;
+        margin: 1rem;
     }
 }    

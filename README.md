@@ -27,10 +27,16 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice.
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
 ## EndPoints
--http://localhost:9000/user/getUser (Usada para el login).
--http://localhost:9000/user/addUser (Usada para el registro).
--http://localhost:9000/user/update (Usada para actualizar al usuario).
--http://localhost:9000/crypto/getCoins (Usada para obtener todas la monedas).
--http://localhost:9000/crypto/update (Usada para actualizar las monedas).
--http://localhost:9000/crypto-user/update (Usada para actualizar los registro de las monedas del usuario).
--http://localhost:9000/user/getCoinsByIds (Usada para obtener un registro especifico de una moneda del usuario).
+>http://localhost:9000/user/getUser (Usada para el login).<br>
+>http://localhost:9000/user/addUser (Usada para el registro).<br>
+>http://localhost:9000/user/update (Usada para actualizar al usuario).<br>
+>http://localhost:9000/crypto/getCoins (Usada para obtener todas la monedas).<br>
+>http://localhost:9000/crypto/update (Usada para actualizar las monedas).<br>
+>http://localhost:9000/crypto-user/update (Usada para actualizar los registro de las monedas del usuario).<br>
+>http://localhost:9000/user/getCoinsByIds (Usada para obtener un registro especifico de una moneda del usuario).<br>
+
+## Esquema de la BBDD
+![Texto Alt](https://github.com/AntonioJRM1998/CryptoFortress/blob/master/src/assets/images/bbdd.png)
+
+## Request Postman
+[Peticiones de postman](https://github.com/AntonioJRM1998/CryptoFortress/tree/master/src/assets/request-postmant) (Se pueden encontrar en la carpeta del proyecto Assets)

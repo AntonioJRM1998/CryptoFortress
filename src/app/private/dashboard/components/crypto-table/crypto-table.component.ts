@@ -19,7 +19,6 @@ import { Subscription } from 'rxjs';
 export class CryptoTableComponent implements OnInit {
   displayedColumns: string[] = ['asset', 'name', 'value', 'stock','compra/venta'];
   dataSource: MatTableDataSource<cryptoMonedas>;
-  cryptoCoins:cryptoMonedas[]=[]
   user:user = {}as user
   suscription: Subscription = new Subscription;
   
@@ -30,12 +29,11 @@ export class CryptoTableComponent implements OnInit {
     this.dataSource = new MatTableDataSource();
     this.paginator = {} as MatPaginator
     this.sort = {} as MatSort
-    // Assign the data to the data source for the table to render
   }
 
   ngOnInit(): void {
     this.obtenerUser()
-    this.suscription= this.cryptoservice.getRefesh().subscribe(()=>{
+    this.suscription = this.cryptoservice.getRefesh().subscribe(()=>{
       this.refreshTable()
     })
   }
@@ -56,7 +54,6 @@ export class CryptoTableComponent implements OnInit {
   refreshTable(){
     this.cryptoservice.getAllCoins().subscribe(coins =>{
       if(!!coins){
-        this.cryptoCoins=coins
         this.dataSource.data=coins
       }else{
 
@@ -65,7 +62,7 @@ export class CryptoTableComponent implements OnInit {
   }
   openDialog(coin:cryptoMonedas,type:string) {
     sessionStorage.setItem('trade',type)
-    let dialog=this.dialog.open(CompraVentaComponent, {
+    this.dialog.open(CompraVentaComponent, {
       data: {
         crypto_id:coin.crypto_id,
         crypto_name:coin.crypto_name,

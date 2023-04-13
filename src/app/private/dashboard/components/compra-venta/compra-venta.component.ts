@@ -18,7 +18,6 @@ export class CompraVentaComponent implements OnInit {
   tusMonedas:number=0
   type:string=''
   newBalance:number=0
-  cerrarModal=false
 
   constructor(private userservice:UserService, 
     @Inject(MAT_DIALOG_DATA) public data: 
@@ -53,7 +52,6 @@ export class CompraVentaComponent implements OnInit {
       this.cryptoUserService.updateCoinUser(coinUser).subscribe(_resutl =>{})
       this.userservice.updateBalance(this.newBalance,coinUser.user_id).subscribe(_resutl=>{})
       this.userservice.balance.emit(this.newBalance)
-      this.cerrarModal=true
     }else{
       console.log('He fallado')
     }

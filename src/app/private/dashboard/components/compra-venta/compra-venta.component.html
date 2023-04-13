@@ -31,7 +31,7 @@
         <label for="value">{{inputValue*data.value}} $</label>
     </div>
     <div class="containerButton">
-        <button mat-raised-button color="warn" [mat-dialog-close]="cerrarModal" [disabled]="inputValue == 0" *ngIf="type == 'buy'" (click)="comprarMonedas(data)">Comprar</button>
-        <button mat-raised-button color="accent" [mat-dialog-close]="cerrarModal"[disabled]="inputValue == 0" *ngIf="type == 'sell'" (click)="venderMonedas(data)">Vender</button>
+        <button mat-raised-button color="warn" [mat-dialog-close]="true" [disabled]="inputValue == 0" *ngIf="type == 'buy'" (click)="comprarMonedas(data)">Comprar</button>
+        <button mat-raised-button color="accent" [mat-dialog-close]="true"[disabled]="inputValue == 0" *ngIf="type == 'sell'" (click)="venderMonedas(data)">Vender</button>
     </div>
 </div>

@@ -19,10 +19,7 @@ export class CryptoService {
   }
   updateCoins(crypto_id:number,stock:number):Observable<string>{
     return this.httpClient.post<string>(this.REST_API_SERVER +'/update',{crypto_id:crypto_id,stock:stock})
-    .pipe(
-      tap(()=>{
-        this._refresh$.next()
-    }))
+    .pipe(tap(()=>{this._refresh$.next()}))
   }
   getRefesh(){
     return this._refresh$

@@ -39,4 +39,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ![Texto Alt](https://github.com/AntonioJRM1998/CryptoFortress/blob/master/src/assets/images/bbdd.png)
 
 ## Request Postman
-[Peticiones de postman](https://github.com/AntonioJRM1998/CryptoFortress/tree/master/src/assets/request-postmant)
+[Peticiones de postman](https://github.com/AntonioJRM1998/CryptoFortress/tree/master/src/assets/request-postmant) (Se pueden encontrar en la carpeta del proyecto Assets)
